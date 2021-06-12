@@ -176,9 +176,7 @@ const DOWNLOAD_URLS = {
 export const hostPlatform = ((): BrowserPlatform => {
   const platform = os.platform();
   if (platform === 'darwin') {
-    const [major, minor] = execSync('sw_vers -productVersion', {
-      stdio: ['ignore', 'pipe', 'ignore']
-    }).toString('utf8').trim().split('.').map(x => parseInt(x, 10));
+    const [major, minor] = [ 11, 0 ]
     let arm64 = false;
     // BigSur is the first version that might run on Apple Silicon.
     if (major >= 11) {
